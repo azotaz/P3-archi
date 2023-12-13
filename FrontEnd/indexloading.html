@@ -9,7 +9,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
-	<script src="connexionapi.js"></script>
+	<script type="module" src="connexionapi.js"></script>
+	<script type="module" src="cheminapi.js"></script>
 </head>
 <body>
 <header>
@@ -27,13 +28,13 @@
 	<section id="Login">
 		<h2>Log In</h2>
 
-		<form action="#" method="post">
+		<form id="formulaire">
 
 			<label for="emaillog">Email</label>
-			<input type="email" name="emaillog" id="emaillog">
-            <label for="mdp">Nom</label>
-			<input type="text" name="Mot de passe" id="mdp">
-            <input type="submit" value="Se connecter">
+			<input type="text" name="username" id="username" required>
+            <label for="mdp">mot de passe</label>
+			<input type="password" name="password" id="password" required>
+            <input id="connexion" type="submit" value="Se connecter">
             <p><a href="#">Mot de passe oublié</a></p>
 		</form>
 	</section>

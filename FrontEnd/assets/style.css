@@ -131,18 +131,23 @@ flex: 1;
 
 
 }
-.gallery {
+#gallery {
 	width: 100%;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-column-gap: 20px;
 	grid-row-gap: 20px;
+
 }
 
-.gallery img {
+.image-container {
 	width: 100%;
-
 }
+
+.image-container img {
+    width: 100%;
+}
+
 #contact {
 	width: 50%;
 margin: auto;
