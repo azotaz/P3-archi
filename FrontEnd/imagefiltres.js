@@ -1,7 +1,7 @@
 import { Apifin } from "./cheminapi.js";
 
 const categoriefiltres = document.getElementById("portfolio")
-const galleryElement = categoriefiltres.querySelector("#gallery");
+const galleryElement = categoriefiltres.querySelector("#gallery")
 function importeImages () {
     fetch(Apifin("/works"), {
         method: "GET",

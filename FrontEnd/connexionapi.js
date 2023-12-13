@@ -16,7 +16,7 @@ function logconnection () {
                 }),
             })
             .then((response) => response.json())
-    .then((data) => {
+    .then(data => {
       if (data.token) {
         localStorage.setItem("token", data.token); // Stockage local du token
         window.location.href = "index.html";
@@ -24,7 +24,7 @@ function logconnection () {
       } else {
         const errorMessage = document.createElement("p");
         errorMessage.textContent = "Identifiants incorrects.";
-        loginForm.appendChild(errorMessage);
+        formulaires.appendChild(errorMessage);
       }
     });
 }
