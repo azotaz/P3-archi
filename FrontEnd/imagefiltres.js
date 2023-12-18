@@ -37,11 +37,15 @@ function importeImages () {
                 containerElement.appendChild(imageElement);
                   // Créer un élément de titre
                   const titleElement = document.createElement('p');
-
+                  const idElement = document.createElement('Id');
                // Définir le texte du titre avec le titre de l'image
                   titleElement.textContent = imageData.title;
+                  idElement.textContent = imageData.categoryId;
+                //création de class pour l'id
+                  idElement.classList.add('Idphoto');
                 // Ajouter l'image à la galerie
                 containerElement.appendChild(titleElement);
+                containerElement.appendChild(idElement);
                 galleryElement.appendChild(containerElement);
 
 

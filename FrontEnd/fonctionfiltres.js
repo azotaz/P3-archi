@@ -3,6 +3,7 @@ import { Apifin } from "./cheminapi.js";
 // Tous: id 1,2,3 ; Objets : id 1 ; Appartements: id 2 ; hôtels & restaurants: id 3 
 const filtres = document.getElementById("portfolio")
 const filtreElement = filtres.querySelector ("#filtresclic")
+
 function fonctionnementdufiltre () {
     fetch(Apifin("/categories"), {
         method: "GET",
@@ -25,7 +26,63 @@ function fonctionnementdufiltre () {
         data.forEach(idData => {
             // Log des informations de chaque image dans la console
              console.log(idData);
-            });
-    })
 
+             const divfiltres = document.createElement('button');
+             divfiltres.classList.add('styled-button');
+
+             const idfiltres = document.createElement ('id');
+            
+             const textfiltres = document.createElement('p');
+           
+             idfiltres.textContent = idData.id;
+           
+             idfiltres.classList.add('Idfiltre');
+
+             textfiltres.textContent = idData.name;
+
+             divfiltres.appendChild(idfiltres);
+             divfiltres.appendChild(textfiltres);
+             filtreElement.appendChild(divfiltres);
+
+
+
+         });
+       })
+    .catch(error => {
+        // Gérer les erreurs survenues lors de la requête
+        console.error('Erreur lors de la récupération des données:', error);
+    });
 }
+
+
+
+// Fonction pour filtrer les images par ID
+function filterImagesById(idfiltres) {
+    const galleryImages = document.querySelectorAll('.image-container');
+
+    galleryImages.forEach((galleryImage) => {
+        const idElement = galleryImage.querySelector('.Idphoto').textContent;
+
+        if (idfiltres === 'tous' || idElement === idfiltres) {
+            galleryImage.style.display = 'inline-block'; // Affiche l'image
+        } else {
+            galleryImage.style.display = 'none'; // Masque l'image
+        }
+    });
+}
+
+// Ajouter des gestionnaires d'événements aux boutons de filtre
+filtreElement.addEventListener('click', function (event) {
+    const target = event.target;
+    
+    // Vérifier si l'élément cliqué est un bouton
+    if (target.tagName === 'BUTTON') {
+        const idfiltres = target.querySelector('.Idfiltre').textContent;
+        filterImagesById(idfiltres);
+
+    }
+});
+
+
+fonctionnementdufiltre(); 
+   
