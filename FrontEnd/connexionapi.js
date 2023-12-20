@@ -32,4 +32,4 @@ formulaires.addEventListener("submit", (e) => {
   e.preventDefault();
   logconnection();
 });
-      
+
