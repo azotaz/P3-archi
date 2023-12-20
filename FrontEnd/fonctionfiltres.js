@@ -29,19 +29,20 @@ function fonctionnementdufiltre () {
 
              const divfiltres = document.createElement('button');
              divfiltres.classList.add('styled-button');
+             divfiltres.textContent = idData.name
 
              const idfiltres = document.createElement ('id');
             
-             const textfiltres = document.createElement('p');
+             //const textfiltres = document.createElement('p');
            
              idfiltres.textContent = idData.id;
            
              idfiltres.classList.add('Idfiltre');
 
-             textfiltres.textContent = idData.name;
+             //textfiltres.textContent = idData.name;
 
              divfiltres.appendChild(idfiltres);
-             divfiltres.appendChild(textfiltres);
+             //divfiltres.appendChild(textfiltres);
              filtreElement.appendChild(divfiltres);
 
 
@@ -73,14 +74,16 @@ function filterImagesById(idfiltres) {
 
 // Ajouter des gestionnaires d'événements aux boutons de filtre
 filtreElement.addEventListener('click', function (event) {
+    console.log("click")
     const target = event.target;
     
     // Vérifier si l'élément cliqué est un bouton
-    if (target.tagName === 'BUTTON') {
+    
+   // if (target.tagName === 'BUTTON') {
         const idfiltres = target.querySelector('.Idfiltre').textContent;
         filterImagesById(idfiltres);
 
-    }
+   // }
 });
 
 
