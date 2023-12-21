@@ -74,12 +74,10 @@ function filterImagesById(idfiltres) {
 
 // Ajouter des gestionnaires d'événements aux boutons de filtre
 filtreElement.addEventListener('click', function (event) {
-    console.log("click")
     const target = event.target;
     
     // Vérifier si l'élément cliqué est un bouton
     
-   // if (target.tagName === 'BUTTON') {
         const idfiltres = target.querySelector('.Idfiltre').textContent;
         filterImagesById(idfiltres);
 
