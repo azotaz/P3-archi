@@ -238,6 +238,32 @@ PAGE DE CONNEXION
 *
 *
 *******/
+.edition {
+	height: 59px;
+	width: 100%;
+	background-color: black;
+	color: #fff;
+	padding-top: 28px;
+	text-align: center;
+}
+
+.modifier {
+	font-size: 14px;
+	font-weight:normal;
+	font-family: 'Work Sans';
+	margin-left: 30px;
+	text-decoration: none;
+}
+
+.modifier a {
+	text-decoration: none;
+	color: black;
+}
+
+#portfolio h2,
+#portfolio .modifier {
+    display: inline-block;
+}
 
 /****Remplissage nom et prenom******/
 

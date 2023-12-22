@@ -20,15 +20,16 @@
 
                     //tete de page login
                     const modeEdition = document.getElementsByTagName("body")[0] ;
+                    
                     if (modeEdition) {
-                    modeEdition.insertAdjacentHTML("beforebegin", '<div class = "edition">Mode éditions</div>');
+                    modeEdition.insertAdjacentHTML("beforebegin", '<div class = "edition"><i class="fa-regular fa-pen-to-square"></i> Mode éditions</div>');
                     }
                     //boutton modifier
                     const galeriedesphotos= document.getElementById("portfolio")
                     const AjoutDePhoto = galeriedesphotos.getElementsByTagName("h2")[0] ;
 
                     if (AjoutDePhoto) {
-                        AjoutDePhoto.insertAdjacentHTML("afterend", '<div class = "modifier"><a>Modifier</a></div>');
+                        AjoutDePhoto.insertAdjacentHTML("beforeend", '<div class = "modifier"><a href="#"><i class="fa-regular fa-pen-to-square"></i> Modifier</a></div>');
                       }
                     
 
