@@ -241,10 +241,13 @@ PAGE DE CONNEXION
 .edition {
 	height: 59px;
 	width: 100%;
+	max-width: 1440px;
 	background-color: black;
 	color: #fff;
 	padding-top: 28px;
 	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .modifier {
@@ -307,3 +310,52 @@ PAGE DE CONNEXION
 #Login a {
 	color: black;
 }
+
+/*****MODALE***********/
+#Modale {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	margin-left: 0px;
+	margin-right: auto;
+	max-width: 1440px;
+
+}
+
+#buttonmodale{
+	display: block;
+	border: none;
+	background-color: #fff;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #333333d3;
+}
+
+.modal {
+	width: 630px ;
+	height: 688px ;
+	top: 50%;
+	left: 39%;
+	padding: 30px;
+	border-radius: 10px;
+	background-color: #fff;
+	transform: translate(-50%, -50%);
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+}	
+	
+	
+	
+	
+	
+	

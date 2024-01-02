@@ -29,7 +29,7 @@
                     const AjoutDePhoto = galeriedesphotos.getElementsByTagName("h2")[0] ;
 
                     if (AjoutDePhoto) {
-                        AjoutDePhoto.insertAdjacentHTML("beforeend", '<div class = "modifier"><a href="#"><i class="fa-regular fa-pen-to-square"></i> Modifier</a></div>');
+                        AjoutDePhoto.insertAdjacentHTML("beforeend", '<div class = "modifier"><a href="#" id="lienModifier"><i class="fa-regular fa-pen-to-square"></i> Modifier</a></div>');
                       }
                     
 
