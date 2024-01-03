@@ -23,10 +23,29 @@ function fonctionnementdufiltre () {
         // Traitement des données (data) obtenues de l'API
         console.log(data);
 
-        data.forEach(idData => {
+        
             // Log des informations de chaque image dans la console
-             console.log(idData);
+             //console.log(idData);
 
+
+
+             const selectCategories = document.getElementById('categories');
+
+             data.forEach(category => {
+                 // Création d'une option pour chaque catégorie
+
+                 const option = document.createElement('option');
+                 option.value = category.id;
+                 option.text = category.name; // Utilisez la propriété text au lieu de textContent
+
+                            // Limiter aux trois premières catégories
+                 
+
+                 // Ajout de l'option au menu déroulant
+                 selectCategories.add(option);
+             });
+             data.forEach(idData => {
+                
              const divfiltres = document.createElement('button');
              divfiltres.classList.add('styled-button');
              divfiltres.textContent = idData.name
@@ -44,10 +63,7 @@ function fonctionnementdufiltre () {
              divfiltres.appendChild(idfiltres);
              //divfiltres.appendChild(textfiltres);
              filtreElement.appendChild(divfiltres);
-
-
-
-         });
+         });  
        })
     .catch(error => {
         // Gérer les erreurs survenues lors de la requête
@@ -86,4 +102,4 @@ filtreElement.addEventListener('click', function (event) {
 
 
 fonctionnementdufiltre(); 
-   
+

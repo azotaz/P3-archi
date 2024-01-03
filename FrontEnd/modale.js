@@ -103,12 +103,12 @@ function importeImages () {
   })
   .then(data => {
             // Traitement des données (data) obtenues de l'API
-            console.log(data);
+            //console.log(data);
 
              // Parcourir les données et créer des éléments d'image pour chaque entrée
               data.forEach(imageData => {
              // Log des informations de chaque image dans la console
-              console.log(imageData);
+              //console.log(imageData);
 
               // Créer un conteneur pour chaque image avec titre
               const containerElement = document.createElement('div');
@@ -119,17 +119,6 @@ function importeImages () {
               // Définir l'attribut src de l'image avec l'URL de l'image
               imageElement.src = imageData.imageUrl;
               containerElement.appendChild(imageElement);
-                // Créer un élément de titre
-             //   const titleElement = document.createElement('p');
-              //  const idElement = document.createElement('Id');
-             // Définir le texte du titre avec le titre de l'image
-              //  titleElement.textContent = imageData.title;
-              //  idElement.textContent = imageData.categoryId;
-              //création de class pour l'id
-              //  idElement.classList.add('Idphoto');
-              // Ajouter l'image à la galerie
-            //  containerElement.appendChild(titleElement);
-              //containerElement.appendChild(idElement);
               photomodale.appendChild(containerElement);
 
 
@@ -145,3 +134,4 @@ function importeImages () {
 
 // Appel de la fonction pour importer les images
 importeImages();
+
