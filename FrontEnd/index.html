@@ -66,16 +66,18 @@
 			<section id="formulairemodale">	
 				<form action="#" method="post">		
 					<label for="titres">Titre</label>
-					<input type="text" name="titres" id="titres">
+					<input type="text" name="titres" id="titres" required>
 					<label for="categories">Catégorie</label>
 					<!-- Utilisation de la balise select pour créer un menu déroulant -->
-					<select id="categories" name="categories">
-						<!-- Options pour les catégories seront ajoutées ici dynamiquement -->
-					</select>
-					</form>
-		</section>	
+					<select id="categories" name="categories"> </select>
+
+					
+					
+			
 			<div class="ligne-personnalise"></div>
-			<button id="validerunephoto">Valider</button>	
+			<input id="validerunephoto" type="submit" value="Valider">
+		</form>
+	</section>
 		</div>
 	</div>
 
