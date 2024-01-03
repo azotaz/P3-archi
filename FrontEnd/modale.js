@@ -26,9 +26,20 @@ function ouvrirModale() {
   document.getElementById('modaleajout').style.display = 'block';
 }
 
+function retourmodale() {
+  document.getElementById('modaleajout').style.display = 'none';
+}
+
+const buttonModales = document.getElementById("flecheretour");
+buttonModales.addEventListener ('click', function (event) {
+  event.preventDefault();
+  retourmodale();
+});
+
 function fermerModaleajout() {
   // Cacher la modale
   document.getElementById('modaleajout').style.display = 'none';
+  document.getElementById('Modale').style.display = 'none';
 }
 
 document.body.addEventListener("mousedown", function(event) {

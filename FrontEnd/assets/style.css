@@ -334,6 +334,14 @@ PAGE DE CONNEXION
 	cursor: pointer;
 }
 
+#flecheretour {
+	border: none;
+	background-color: #fff;
+	cursor: pointer;
+	position: absolute;
+	top:20px;
+	left: 20px;
+}
 
 #buttonmodaleajout {
 	display: inline-block;
@@ -457,6 +465,32 @@ PAGE DE CONNEXION
 	margin-top: 40px;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.imgajout {
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 15px;
+	margin-left: 24%;
+
+}
+
+#addphoto {
+	Width:173px;
+	Height:36px;
+	margin-top: 90px;
+	border-radius:50px ;
+	margin-left: 28%;
+	border: none;
+	background-color: #CBD6DC;
+	color: #306685;
+	cursor: pointer;
+}
+
+#stockajoutphoto p {
+	font-size: 10px;
+	margin-top: 10px;
 }
 
 #formulairemodale {
