@@ -320,6 +320,7 @@ PAGE DE CONNEXION
 	margin-left: 0px;
 	margin-right: auto;
 	max-width: 1440px;
+	display: none;
 
 }
 
@@ -425,6 +426,7 @@ PAGE DE CONNEXION
 	margin-left: 0px;
 	margin-right: auto;
 	max-width: 1440px;
+	display: none;
 }
 
 .modalajout {
