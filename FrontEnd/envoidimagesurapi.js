@@ -1,28 +1,42 @@
 import { Apifin } from "./cheminapi.js";
 
-const ajoutphoto = document.getElementById("formulairemodale")
-function envoidephoto() {
-        const titres = document.getElementById('titres').text;
-        const categories = document.getElementById('categories').value;
+document.addEventListener('DOMContentLoaded', function() {
+    var inputElement = document.getElementById('addphoto');
+    var inputTitre = document.getElementById('titres');
+    var selectCategories = document.getElementById('categories');
+    var validerPhotoButton = document.getElementById('validerunephoto');
+
+    validerPhotoButton.addEventListener('click', function(event) {
+    event.preventDefault(); // Empêche le comportement par défaut du formulaire
+
+    var file = inputElement.files[0];
+    var formData = new FormData();
+
+    formData.append('file', file);
+    formData.append('titres', inputTitre.value);
+    formData.append('categories', selectCategories.value);
+
+    var token = localStorage.getItem("token");
 
         fetch(Apifin("/works"), {
                 method: "POST",
+                body: formData,
                 headers: {
-                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + token,
                 },
-                body: JSON.stringify({
-                    titre: titres,
-                    category: categories,
-                }),
+
             })
-            .then((response) => response.json())
-        }
-
-
-        ajoutphoto.addEventListener("submit", (e) => {
-           envoidephoto();
-          });
-        
-
-          //faire en format formdata pour les infos envoyer et l'image + crée une imput.fil(0) (image importer d'un fichier)
-
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Réponse du serveur non OK - Statut : ' + response.status);
+                }
+                return response.json();
+            })
+            .then(data => {
+              console.log('Réponse de l\'API :', data);
+            })
+            .catch(error => {
+              console.error('Erreur lors de la requête :', error);
+            });
+        });    
+    });

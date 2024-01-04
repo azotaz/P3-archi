@@ -45,7 +45,7 @@ function createModalStructure() {
 var inputAjout;
 var stockAjoutPhoto;
 
-  function createAddModalStructure() {
+    function createAddModalStructure() {
     // Création des éléments
     var modalAjout = document.createElement('div');
     modalAjout.classList.add('modalajout');
