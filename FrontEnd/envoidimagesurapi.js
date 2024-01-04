@@ -23,3 +23,6 @@ function envoidephoto() {
            envoidephoto();
           });
         
+
+          //faire en format formdata pour les infos envoyer et l'image + crée une imput.fil(0) (image importer d'un fichier)
+

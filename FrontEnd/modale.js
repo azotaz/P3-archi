@@ -26,33 +26,11 @@ function ouvrirModale() {
   document.getElementById('modaleajout').style.display = 'block';
 }
 
-function retourmodale() {
-  document.getElementById('modaleajout').style.display = 'none';
-}
-
-const buttonModales = document.getElementById("flecheretour");
-buttonModales.addEventListener ('click', function (event) {
-  event.preventDefault();
-  retourmodale();
-});
-
-function fermerModaleajout() {
-  // Cacher la modale
-  document.getElementById('modaleajout').style.display = 'none';
-  document.getElementById('Modale').style.display = 'none';
-}
-
 document.body.addEventListener("mousedown", function(event) {
   if (event.target.id === "ajouterunephoto") {
     event.preventDefault();
     ouvrirModaleajout();
   }
-});
-
-const buttonNodale = document.getElementById("buttonmodaleajout");
-buttonNodale.addEventListener ('click', function (event) {
-  event.preventDefault();
-  fermerModaleajout();
 });
 
  /*function importemodale () {
@@ -81,6 +59,14 @@ buttonNodale.addEventListener ('click', function (event) {
 
 
 importemodale ();*/
+
+
+
+
+
+
+
+
 import { Apifin } from "./cheminapi.js";
 
 const modale = document.getElementById("Modale");
