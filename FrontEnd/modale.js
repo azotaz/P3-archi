@@ -69,6 +69,8 @@ importemodale ();*/
 
 import { Apifin } from "./cheminapi.js";
 
+let imageDataEntry;
+
 const modale = document.getElementById("Modale");
 const photomodale = modale.querySelector("#gallerymodal");
 
@@ -90,12 +92,12 @@ function importeImages () {
   .then(data => {
             // Traitement des données (data) obtenues de l'API
             //console.log(data);
-
+           
              // Parcourir les données et créer des éléments d'image pour chaque entrée
               data.forEach(imageData => {
              // Log des informations de chaque image dans la console
               //console.log(imageData);
-
+              
               // Créer un conteneur pour chaque image avec titre
               const containerElement = document.createElement('div');
               containerElement.classList.add('image-container-modale');
@@ -103,19 +105,23 @@ function importeImages () {
               const imageElement = document.createElement('img');
 
                   // Créez l'élément de bouton de suppression avec l'icône de la poubelle
-    const deleteButton = document.createElement('div');
-    deleteButton.classList.add('delete-button');
+              const deleteButton = document.createElement('div');
+               deleteButton.classList.add('delete-button');
 
-    // Créez l'icône de la poubelle avec Font Awesome
-    const trashIcon = document.createElement('i');
-    trashIcon.classList.add('fa-solid', 'fa-trash-can');
+              // Ajoutez l'attribut data-image-id avec la valeur de l'ID de l'image
+               deleteButton.setAttribute('data-image-id', imageData.id);
+              // Créez l'icône de la poubelle avec Font Awesome
+              const trashIcon = document.createElement('i');
+              trashIcon.classList.add('fa-solid', 'fa-trash-can');
 
-    // Ajoutez l'icône de la poubelle au bouton de suppression
-    deleteButton.appendChild(trashIcon);
 
-    // Ajoutez le bouton de suppression à la div de l'image
 
-    containerElement.appendChild(deleteButton);
+              // Ajoutez l'icône de la poubelle au bouton de suppression
+              deleteButton.appendChild(trashIcon);
+
+              // Ajoutez le bouton de suppression à la div de l'image
+
+              containerElement.appendChild(deleteButton);
 
 
 
@@ -124,10 +130,9 @@ function importeImages () {
              containerElement.appendChild(imageElement);
              photomodale.appendChild(containerElement);
 
-
-
-
+             imageDataEntry = imageData;
        });
+
       })
   .catch(error => {
       // Gérer les erreurs survenues lors de la requête
@@ -136,5 +141,6 @@ function importeImages () {
 }
 
 // Appel de la fonction pour importer les images
-importeImages();
+importeImages ()
 
+export { imageDataEntry };

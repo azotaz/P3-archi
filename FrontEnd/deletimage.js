@@ -2,15 +2,26 @@ import { Apifin } from "./cheminapi.js";
 
 
 
-// Exemple d'ajout de gestionnaire d'événements pour le bouton de suppression
-//.addEventListener('click', function() {
-    // Logique de suppression
-   // deleteWork(workId); // Appeler la fonction de suppression avec l'ID du travail à supprimer
-//});
+document.addEventListener('DOMContentLoaded', function () {
+    setTimeout(function () {
+const modale = document.getElementById("Modale");
+const photomodale = modale.querySelector("#gallerymodal");
+const deleteButtons = photomodale.querySelectorAll('.delete-button');
+
+deleteButtons.forEach(deleteButton => {
+    deleteButton.addEventListener('click', function () {
+    // Appelez ici la fonction pour supprimer l'image avec imageData.id
+    const imageId = deleteButton.getAttribute('data-image-id');
+    console.log("ID de l'image à supprimer :", imageId);
+    deleteImage(imageId);
+            });
+        });
+     }, 1000); // Délai d'une seconde
+});
 
 // Fonction pour supprimer un travail avec l'API
-function deleteWork(workId) {
-    fetch(Apifin("/works/{id}"), {
+function deleteImage(imageId) {
+    fetch(Apifin(`/works/${imageId}`), {
         method: 'DELETE',
     })
     .then(response => {
@@ -21,7 +32,7 @@ function deleteWork(workId) {
     })
     .then(data => {
         // Supprimer l'élément correspondant du DOM
-        const elementToRemove = document.getElementById(`work-${workId}`);
+        const elementToRemove = document.getElementById(`image-${imageId}`);
         if (elementToRemove) {
             elementToRemove.remove();
         }
