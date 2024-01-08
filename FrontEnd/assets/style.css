@@ -553,3 +553,15 @@ flex-direction: column;
 	margin-right: auto;
 }
 
+.delete-button {
+    position: absolute;
+    background: black;
+    font-size: 10px;
+	padding: 5px;
+    cursor: pointer;
+    color: #fff;
+	height: 10px;
+	width: 8px;
+	margin-left:64px ;
+	margin-top: 14px;
+}

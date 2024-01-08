@@ -102,10 +102,27 @@ function importeImages () {
               // Créer un élément d'image
               const imageElement = document.createElement('img');
 
+                  // Créez l'élément de bouton de suppression avec l'icône de la poubelle
+    const deleteButton = document.createElement('div');
+    deleteButton.classList.add('delete-button');
+
+    // Créez l'icône de la poubelle avec Font Awesome
+    const trashIcon = document.createElement('i');
+    trashIcon.classList.add('fa-solid', 'fa-trash-can');
+
+    // Ajoutez l'icône de la poubelle au bouton de suppression
+    deleteButton.appendChild(trashIcon);
+
+    // Ajoutez le bouton de suppression à la div de l'image
+
+    containerElement.appendChild(deleteButton);
+
+
+
               // Définir l'attribut src de l'image avec l'URL de l'image
-              imageElement.src = imageData.imageUrl;
-              containerElement.appendChild(imageElement);
-              photomodale.appendChild(containerElement);
+             imageElement.src = imageData.imageUrl;
+             containerElement.appendChild(imageElement);
+             photomodale.appendChild(containerElement);
 
 
 
