@@ -1,3 +1,7 @@
+import { Apifin } from "./cheminapi.js";
+import deletevent from "./deletimage.js"
+
+
 function ouvrirModale() {
     // Afficher la modale
     document.getElementById('Modale').style.display = 'block';
@@ -33,32 +37,6 @@ document.body.addEventListener("mousedown", function(event) {
   }
 });
 
- /*function importemodale () {
-    (data => {
-        // Traitement des données (data) obtenues de l'API
-        console.log(data);
-
-         // Parcourir les données et créer des éléments d'image pour chaque entrée
-          data.forEach(imageData => {
-         // Log des informations de chaque image dans la console
-          console.log(imageData);
-
-          // Créer un conteneur pour chaque image avec titre
-          const containerElement = document.createElement('div');
-          containerElement.classList.add('image-container-modal');
-          // Créer un élément d'image
-          const imageElement = document.createElement('img');
-
-          // Définir l'attribut src de l'image avec l'URL de l'image
-          imageElement.src = imageData.imageUrl;
-          containerElement.appendChild(imageElement);
-          photomodale.appendChild(containerElement);
-        });
-    })
-}
-
-
-importemodale ();*/
 
 
 
@@ -67,14 +45,15 @@ importemodale ();*/
 
 
 
-import { Apifin } from "./cheminapi.js";
+
 
 let imageDataEntry;
 
 const modale = document.getElementById("Modale");
-const photomodale = modale.querySelector("#gallerymodal");
+let photomodale = modale.querySelector("#gallerymodal");
 
-function importeImages () {
+export default function importeImages () {
+  photomodale.innerHTML=''
   fetch(Apifin("/works"), {
       method: "GET",
       headers: {
@@ -132,7 +111,7 @@ function importeImages () {
 
              imageDataEntry = imageData;
        });
-
+       deletevent ()
       })
   .catch(error => {
       // Gérer les erreurs survenues lors de la requête

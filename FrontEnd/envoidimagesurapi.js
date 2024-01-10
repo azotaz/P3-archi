@@ -1,4 +1,6 @@
 import { Apifin } from "./cheminapi.js";
+import importeImages from "./modale.js";
+import importeImagesprincipal from "./imagefiltres.js"
 
 document.addEventListener('DOMContentLoaded', function() {
     var inputElement = document.getElementById('addphoto');
@@ -12,13 +14,14 @@ document.addEventListener('DOMContentLoaded', function() {
     var file = inputElement.files[0];
     var formData = new FormData();
 
-    formData.append('file', file);
-    formData.append('titres', inputTitre.value);
-    formData.append('categories', selectCategories.value);
+    formData.append('image', file);
+    formData.append('title', inputTitre.value);
+    formData.append('category', selectCategories.value);
 
     var token = localStorage.getItem("token");
 
         fetch(Apifin("/works"), {
+            
                 method: "POST",
                 body: formData,
                 headers: {
@@ -27,14 +30,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
             })
             .then(response => {
+                console.log(response)
                 if (!response.ok) {
                     throw new Error('Réponse du serveur non OK - Statut : ' + response.status);
-                }
-                return response.json();
+                }else
+                console.log("ok")
+               //return response.json();
             })
-            .then(data => {
-              console.log('Réponse de l\'API :', data);
-            })
+            .then (importeImages())
+            .then(importeImagesprincipal())
+
             .catch(error => {
               console.error('Erreur lors de la requête :', error);
             });

@@ -1,8 +1,10 @@
 import { Apifin } from "./cheminapi.js";
 
+
 const categoriefiltres = document.getElementById("portfolio")
-const galleryElement = categoriefiltres.querySelector("#gallery")
-function importeImages () {
+let galleryElement = categoriefiltres.querySelector("#gallery")
+export default function importeImagesprincipal () {
+    galleryElement.innerHTML = ''
     fetch(Apifin("/works"), {
         method: "GET",
         headers: {
@@ -60,4 +62,4 @@ function importeImages () {
 }
 
 // Appel de la fonction pour importer les images
-importeImages();
+importeImagesprincipal();
