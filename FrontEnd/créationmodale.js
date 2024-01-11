@@ -164,6 +164,7 @@ function handleFileChange() {
                         if (addPhotolabel) addPhotolabel.style.display = 'none';
                         if (addPhoto) addPhoto.style.display = 'none';
                         if (infoAjout) infoAjout.style.display = 'none';
+
             // Ajout de la nouvelle image à stockAjoutPhoto
             stockAjoutPhoto.appendChild(newImage);
         });
@@ -185,6 +186,7 @@ function handleFileChange() {
     stockAjoutPhoto.querySelector('#addphotolabel').style.display = '';
     stockAjoutPhoto.querySelector('#addphoto').style.display = '';
     stockAjoutPhoto.querySelector('p').style.display = '';
+    document.getElementById('titres').value = '';
     var imgAjout = stockAjoutPhoto.querySelector('.imgajout.custom-size');
     if (imgAjout) stockAjoutPhoto.removeChild(imgAjout);
   }
@@ -203,6 +205,7 @@ function handleFileChange() {
     stockAjoutPhoto.querySelector('#addphotolabel').style.display = '';
     stockAjoutPhoto.querySelector('#addphoto').style.display = '';
     stockAjoutPhoto.querySelector('p').style.display = '';
+    document.getElementById('titres').value = '';
     var imgAjout = stockAjoutPhoto.querySelector('.imgajout.custom-size');
     if (imgAjout) stockAjoutPhoto.removeChild(imgAjout);
   }

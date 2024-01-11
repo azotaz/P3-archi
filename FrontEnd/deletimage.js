@@ -5,8 +5,8 @@ import importeImagesprincipal from "./imagefiltres.js"
 
 export default function deletevent() {
 console.log("entrer dans la fonction deleteevent")
-document.addEventListener('DOMContentLoaded', function () {
-    setTimeout(function () {
+//document.addEventListener('DOMContentLoaded', function () {
+ //   setTimeout(function () {
 const modale = document.getElementById("Modale");
 const photomodale = modale.querySelector("#gallerymodal");
 const deleteButtons = photomodale.querySelectorAll('.delete-button');
@@ -19,8 +19,8 @@ deleteButtons.forEach(deleteButton => {
     deleteImage(imageId);
             });
         });
-     }, 1000); // Délai d'une seconde
-});
+ //    }, 1000); // Délai d'une seconde
+//});
 
 }
 
