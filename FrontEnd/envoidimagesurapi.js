@@ -37,8 +37,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log("ok")
                //return response.json();
             })
+            
             .then (importeImages())
-            .then(importeImagesprincipal())
+            .then (importeImagesprincipal())
 
             .catch(error => {
               console.error('Erreur lors de la requête :', error);

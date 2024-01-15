@@ -55,6 +55,7 @@ export default function importeImagesprincipal () {
 
          });
         })
+        
     .catch(error => {
         // Gérer les erreurs survenues lors de la requête
         console.error('Erreur lors de la récupération des données:', error);
