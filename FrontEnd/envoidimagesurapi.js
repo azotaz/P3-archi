@@ -34,12 +34,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (!response.ok) {
                     throw new Error('Réponse du serveur non OK - Statut : ' + response.status);
                 }else
+                importeImages()
+            importeImagesprincipal() 
                 console.log("ok")
                //return response.json();
             })
             
-            .then (importeImages())
-            .then (importeImagesprincipal())
+           
 
             .catch(error => {
               console.error('Erreur lors de la requête :', error);
