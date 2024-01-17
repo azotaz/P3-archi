@@ -1,13 +1,27 @@
 import { Apifin } from "./cheminapi.js";
 import importeImages from "./modale.js";
-import importeImagesprincipal from "./imagefiltres.js"
+import importeImagesprincipal from "./imagefiltres.js";
+import retourmodale from "./créationmodale.js"
+
+var formulairemodal = document.getElementById('formulairemodale')
+var inputTitre = document.getElementById('titres');
+
+formulairemodal.addEventListener('change', function(event) {
+    event.preventDefault(); // Empêche le comportement par défaut du formulaire
+
+if(inputTitre.value.size>0 && inputElement.files[0]) {
+validerPhotoButton.setAttribute('disabled','false');
+validerPhotoButton.style.backgroundColor='green';
+}
+})
 
 document.addEventListener('DOMContentLoaded', function() {
     var inputElement = document.getElementById('addphoto');
-    var inputTitre = document.getElementById('titres');
+    
     var selectCategories = document.getElementById('categories');
     var validerPhotoButton = document.getElementById('validerunephoto');
 
+   
     validerPhotoButton.addEventListener('click', function(event) {
     event.preventDefault(); // Empêche le comportement par défaut du formulaire
 
@@ -35,7 +49,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     throw new Error('Réponse du serveur non OK - Statut : ' + response.status);
                 }else
                 importeImages()
-            importeImagesprincipal() 
+                importeImagesprincipal() 
+                retourmodale()
                 console.log("ok")
                //return response.json();
             })

@@ -111,6 +111,8 @@ var stockAjoutPhoto;
     validerPhotoButton.setAttribute('id', 'validerunephoto');
     validerPhotoButton.setAttribute('type', 'submit');
     validerPhotoButton.setAttribute('value', 'Valider');
+    validerPhotoButton.setAttribute('disabled','true');
+    validerPhotoButton.style.backgroundColor='grey';
 
     // Ajout des éléments à la modal d'ajout
     modalAjout.appendChild(retourButton);
@@ -180,7 +182,7 @@ function handleFileChange() {
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-  function retourmodale() {
+  export default function retourmodale() {
     document.getElementById('modaleajout').style.display = 'none';
     stockAjoutPhoto.querySelector('.imgajout').style.display = '';
     stockAjoutPhoto.querySelector('#addphotolabel').style.display = '';
