@@ -181,6 +181,7 @@ function handleFileChange() {
   inputAjout.addEventListener('change', handleFileChange);
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+  var validerPhotoButton = document.getElementById('validerunephoto');
 
   export default function retourmodale() {
     document.getElementById('modaleajout').style.display = 'none';
@@ -189,6 +190,8 @@ function handleFileChange() {
     stockAjoutPhoto.querySelector('#addphoto').style.display = '';
     stockAjoutPhoto.querySelector('p').style.display = '';
     document.getElementById('titres').value = '';
+    validerPhotoButton.setAttribute('disabled', 'true');
+    validerPhotoButton.style.backgroundColor = 'grey';
     var imgAjout = stockAjoutPhoto.querySelector('.imgajout.custom-size');
     if (imgAjout) stockAjoutPhoto.removeChild(imgAjout);
   }
@@ -208,6 +211,8 @@ function handleFileChange() {
     stockAjoutPhoto.querySelector('#addphoto').style.display = '';
     stockAjoutPhoto.querySelector('p').style.display = '';
     document.getElementById('titres').value = '';
+    validerPhotoButton.setAttribute('disabled', 'true');
+    validerPhotoButton.style.backgroundColor = 'grey';
     var imgAjout = stockAjoutPhoto.querySelector('.imgajout.custom-size');
     if (imgAjout) stockAjoutPhoto.removeChild(imgAjout);
   }

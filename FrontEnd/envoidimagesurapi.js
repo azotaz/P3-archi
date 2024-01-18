@@ -56,13 +56,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     throw new Error('Réponse du serveur non OK - Statut : ' + response.status);
                 }else
 
-                validerPhotoButton.setAttribute('disabled', 'true');
-                validerPhotoButton.style.backgroundColor = 'grey';
+
+
                 importeImages()
                 importeImagesprincipal() 
                 retourmodale()
                 console.log("ok")
-               //return response.json();
+
             })
             
            
