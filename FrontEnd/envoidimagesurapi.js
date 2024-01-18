@@ -5,22 +5,29 @@ import retourmodale from "./créationmodale.js"
 
 var formulairemodal = document.getElementById('formulairemodale')
 var inputTitre = document.getElementById('titres');
+var inputElement = document.getElementById('addphoto');
+var validerPhotoButton = document.getElementById('validerunephoto');
+
 
 formulairemodal.addEventListener('change', function(event) {
     event.preventDefault(); // Empêche le comportement par défaut du formulaire
 
-if(inputTitre.value.size>0 && inputElement.files[0]) {
-validerPhotoButton.setAttribute('disabled','false');
-validerPhotoButton.style.backgroundColor='green';
-}
-})
+if(inputTitre.value.length >0 && inputElement.files[0]) {
+validerPhotoButton.removeAttribute('disabled');
+validerPhotoButton.style.backgroundColor='#1D6154';
+} else {
+    validerPhotoButton.setAttribute('disabled', 'true');
+    validerPhotoButton.style.backgroundColor = 'grey';
+};
+});
 
 document.addEventListener('DOMContentLoaded', function() {
-    var inputElement = document.getElementById('addphoto');
     
+
+    var inputTitre = document.getElementById('titres');
     var selectCategories = document.getElementById('categories');
     var validerPhotoButton = document.getElementById('validerunephoto');
-
+    var inputElement = document.getElementById('addphoto');
    
     validerPhotoButton.addEventListener('click', function(event) {
     event.preventDefault(); // Empêche le comportement par défaut du formulaire
@@ -48,6 +55,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (!response.ok) {
                     throw new Error('Réponse du serveur non OK - Statut : ' + response.status);
                 }else
+
+                validerPhotoButton.setAttribute('disabled', 'true');
+                validerPhotoButton.style.backgroundColor = 'grey';
                 importeImages()
                 importeImagesprincipal() 
                 retourmodale()
