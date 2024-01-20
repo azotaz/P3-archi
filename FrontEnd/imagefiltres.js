@@ -25,8 +25,7 @@ export default function importeImagesprincipal () {
 
                // Parcourir les données et créer des éléments d'image pour chaque entrée
                 data.forEach(imageData => {
-               // Log des informations de chaque image dans la console
-                //console.log(imageData);
+
 
                 // Créer un conteneur pour chaque image avec titre
                 const containerElement = document.createElement('div');

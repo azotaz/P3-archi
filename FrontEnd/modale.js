@@ -69,13 +69,11 @@ export default function importeImages () {
       return response.json();
   })
   .then(data => {
-            // Traitement des données (data) obtenues de l'API
-            //console.log(data);
+
            
              // Parcourir les données et créer des éléments d'image pour chaque entrée
               data.forEach(imageData => {
-             // Log des informations de chaque image dans la console
-              //console.log(imageData);
+
               
               // Créer un conteneur pour chaque image avec titre
               const containerElement = document.createElement('div');

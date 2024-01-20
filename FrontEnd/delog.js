@@ -8,6 +8,7 @@ function logout() {
 }
 
 // Ajouter un gestionnaire d'événements pour le bouton de déconnexion
-const logoutButton = document.getElementById("login"); // Remplacez "logoutButton" par l'ID de votre bouton de déconnexion
+const logoutButton = document.getElementById("login"); 
+// Remplacez "logoutButton" par l'ID de votre bouton de déconnexion
 
 logoutButton.addEventListener("click", logout);

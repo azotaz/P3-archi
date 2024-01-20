@@ -34,9 +34,6 @@
                     
 
 
-                } else {
-                    // Redirigez l'utilisateur vers la page de connexion si le token n'est pas valide
-                    //window.location.href = 'indexloading.html';
                 }
             }
     
@@ -44,9 +41,3 @@
     // Appelez la fonction pour modifier la page une fois le chargement terminé
     window.onload = modifyPage;
 
-
-    //element.insertAdjacentHTML
-
-    //getelementbytagname("h2") element.insertAdjacentHTML
-
-    //https://developer.mozilla.org/fr/docs/Web/API/Element/insertAdjacentHTML

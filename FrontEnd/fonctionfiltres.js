@@ -1,6 +1,5 @@
 import { Apifin } from "./cheminapi.js";
 
-// Tous: id 1,2,3 ; Objets : id 1 ; Appartements: id 2 ; hôtels & restaurants: id 3 
 const filtres = document.getElementById("portfolio")
 const filtreElement = filtres.querySelector ("#filtresclic")
 
@@ -24,8 +23,7 @@ function fonctionnementdufiltre () {
         console.log(data);
 
         
-            // Log des informations de chaque image dans la console
-             //console.log(idData);
+
 
 
 
@@ -36,9 +34,9 @@ function fonctionnementdufiltre () {
 
                  const option = document.createElement('option');
                  option.value = category.id;
-                 option.text = category.name; // Utilisez la propriété text au lieu de textContent
+                 option.text = category.name; 
 
-                            // Limiter aux trois premières catégories
+                           
                  
 
                  // Ajout de l'option au menu déroulant
@@ -52,16 +50,14 @@ function fonctionnementdufiltre () {
 
              const idfiltres = document.createElement ('id');
             
-             //const textfiltres = document.createElement('p');
+
            
-             idfiltres.textContent = idData.id;
-           
+             idfiltres.textContent = idData.id;         
              idfiltres.classList.add('Idfiltre');
 
-             //textfiltres.textContent = idData.name;
+
 
              divfiltres.appendChild(idfiltres);
-             //divfiltres.appendChild(textfiltres);
              filtreElement.appendChild(divfiltres);
          });  
        })
